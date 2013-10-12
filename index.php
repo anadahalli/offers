@@ -22,7 +22,7 @@
 			<option value="Hyderabad">Hyderabad</option>
 			<option value="Kolkata">Kolkata</option>
 		</select>
-		Genre
+		Type
 		<select id="genre">
 			<option value="special">Specials</option>
 			<option value="dining">Dining</option>
