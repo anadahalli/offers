@@ -33,19 +33,23 @@ function special($url) {
 	$html = file_get_html($url);
 
 	$special = array();
-	$special['hot'] = array();
-	$special['latest'] = array();
+	$hot = array();
+	$latest = array();
 
 	//~ hot offers
 	foreach($html->find('.so-top-seca') as $ele)
-		foreach($ele->find('p.bullet_txt') as $e)
-			array_push($special['hot'], $e->innertext);
+		foreach($ele->find('p.bullet_txt') as $el)
+			foreach($el->find('a') as $e)
+				array_push($hot, $e->innertext);
 
 	//~ latest offers
 	foreach($html->find('.so-top-secb') as $ele)
-		foreach($ele->find('p.bullet_txt') as $e)
-			array_push($special['latest'], $e->innertext);
+		foreach($ele->find('p.bullet_txt') as $el)
+			foreach($el->find('a') as $e)
+				array_push($latest, $e->innertext);
 
+	array_push($special, $hot, $latest);
+	
 	return $special;
 }			
 
