@@ -1,1 +1,2 @@
-=== Get All the good offers out there ===
+Get All the good offers out there
+=================================
